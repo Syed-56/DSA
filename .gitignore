@@ -1,0 +1,17 @@
+# Ignore Windows executable files
+*.exe
+
+# Ignore object files
+*.o
+
+# Ignore build output
+*.out
+*.a
+*.so
+*.dll
+
+# Ignore debug and log files
+*.log
+
+# Ignore compiled CMake or Makefile builds
+build/
