@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+//in linear search algo, whole array is traversed to find the target
 int linearSearch(int arr[], int size, int target) {
     for(int i=0; i<size; i++) {
         if(arr[i]==target)  return i;
