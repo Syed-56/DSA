@@ -3,15 +3,19 @@
 using namespace std;
 
 void maxSubArray(vector<int>& nums) {
+    int maxSum=0;
     for(int i=0; i<nums.size(); i++) {
         for(int j=i; j<nums.size(); j++) {
+            int sum=0;
             for(int k=i; k<=j; k++) {
-                cout << nums[k] << " ";
+                sum += nums[k];
             }
-            cout << "\t";
+            cout << sum << " ";
+            if(sum > maxSum)    maxSum=sum;
         }
         cout << endl;
     }
+    cout << "Max Sum: " << maxSum;
 }
 
 int main() {
