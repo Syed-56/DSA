@@ -2,11 +2,19 @@
 #include <vector>
 using namespace std;
 
-int maxSubArray(vector<int>& nums) {
-
+void maxSubArray(vector<int>& nums) {
+    for(int i=0; i<nums.size(); i++) {
+        for(int j=i; j<nums.size(); j++) {
+            for(int k=i; k<=j; k++) {
+                cout << nums[k] << " ";
+            }
+            cout << "\t";
+        }
+        cout << endl;
+    }
 }
 
 int main() {
-    vector<int> nums = {-2,1,-3,4,-1,2,1,-5,4};
-    cout << "Max Subarray Sum = " << maxSubArray(nums);
+    vector<int> nums = {1,2,3,4,5};
+    maxSubArray(nums);
 }
