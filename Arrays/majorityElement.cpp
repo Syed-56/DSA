@@ -1,24 +1,22 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 int majorityElement(vector<int>& nums) {
     int n = nums.size();
-    if(n==1)    return nums[n-1];
-    int freq;
+    int freq=0, ans=nums[0];
+    
     for(int i=0; i<n; i++) {
-        freq=1;
-        for(int j=i+1; j<n; j++) {
-            if(nums[i]==nums[j]) {
-                freq++;
-            }
-        }
-        if(freq > n/2)  return nums[i];
+        if(freq==0)  ans=nums[i];
+
+        if(ans==nums[i])  freq++;
+        else   freq--;
     }
-    return -1;
+    return ans;
 }
 
 int main() {
-    vector<int> nums = {1,3,3,2,3};
+    vector<int> nums = {1,3,3,3,2};
     cout << "Majority Element: " << majorityElement(nums);
 }
