@@ -14,6 +14,13 @@ int majorityElement(vector<int>& nums) {
         else   freq--;
     }
     return ans;
+    /*if theres no majority element
+    int count=0
+    for(int val:nums) {
+      if(val==ans)  count++
+    }
+     if(count > n/2)  return ans
+     else return -1 */
 }
 
 int main() {
