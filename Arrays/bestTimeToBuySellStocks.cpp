@@ -3,20 +3,18 @@
 #include <algorithm>
 using namespace std;
 
-int profit(vector<int> prices) {
+int maxProfit(vector<int>& prices) {
     int n = prices.size();
-    int maxProfit=0;
-
-    for(int i=0; i<n; i++) {
-        for(int j=i+1; j<n; j++) {
-            int diff = prices[j]-prices[i];
-            if(diff > maxProfit)  maxProfit = diff;
-        }
+    int bestBuy=0, maxProfit=0;
+    int profit;
+    for(int i=1; i<n; i++) {
+       if(prices[i] > bestBuy)  maxProfit = max(profit,maxProfit);
+       bestBuy = min(bestBuy,prices[i]);
     }
     return maxProfit;
 }
 
 int main() {
     vector<int> nums = {5,4,3,2,1};
-    cout << "Profit: " << profit(nums);
+    cout << "Profit: " << maxProfit(nums);
 }
