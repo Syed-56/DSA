@@ -4,33 +4,29 @@ using namespace std;
 
 int pivotIndex(vector<int> nums) {
     int n = nums.size();
-    int sumLeft, sumRight;
-    int pivotIndex = 0;
+    int totalSum=0;
+    int pivotIndex;
     bool found=false;
-    while (pivotIndex < n) {
-        sumLeft=0, sumRight=0;
-        for(int j=0; j<pivotIndex; j++) {
-            sumLeft += nums[j];
-        }
-        for(int j=n-1; j>pivotIndex; j--) {
-            sumRight += nums[j];
-        }
-        cout << "\nPivot Index = " << pivotIndex << endl;
-        cout << "Sum from Pivot Index Left = " << sumLeft << endl;
-        cout << "Sum from Pivot Index Right = " << sumRight << endl;
-        if(sumLeft==sumRight) {
+    for(int i=0; i<n; i++) {
+        totalSum += nums[i];
+    }
+    int rightSum=totalSum, leftSum=0;
+    for(int i=0; i<n; i++) {
+        rightSum -= nums[i];
+        cout << "\nRigth Sum = " << rightSum;
+        if(rightSum==leftSum) {
+            pivotIndex=i;
             found=true;
             break;
         }
-        else {
-            pivotIndex++;
-        }
+        leftSum += nums[i];
+        cout << "\nLeft Sum = " << leftSum;
     }
     if(found)   return pivotIndex;
     else    return -1;
 }
 
 int main() {
-    vector<int> nums = {1,2,3,3,0};
+    vector<int> nums = {2, 3, -1, 8};
     cout << "Pivot Index = " << pivotIndex(nums);
 }
