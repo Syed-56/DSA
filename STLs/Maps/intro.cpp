@@ -6,6 +6,7 @@ int main() {
     map<string, int> m;
     //here string is datatype of key and int is datatype of value. The value can be reassigned but a key can't
     m["tv"] = 100;
+    m.emplace("tv",120);    //this will not be inserted
     m["laptop"] = 50;
     m["headphone"] = 10;
     for(auto val:m)     cout << val.first << " " << val.second << endl;
