@@ -1,9 +1,14 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 vector<int> squareAndSort(vector<int>& nums) {
-
+    for(int& val : nums) {
+        val *= val;
+    }
+    sort(nums.begin(), nums.end());
+    return nums;
 }
 
 int main() {
