@@ -4,17 +4,20 @@ using namespace std;
 
 vector<int> productExceptSelf(vector<int> nums) {
     int n = nums.size();
-    vector<int> arrayToReturn;
-    int product;
-    for(int i=0; i<n; i++) {
-        product=1;
-        for(int j=0; j<n; j++) {
-            if(i == j)  continue;
-            product *= nums[j];
-        }
-        arrayToReturn.push_back(product);
+    vector<int> ans(n,1);
+
+    int prefix=1;
+    for(int i=1; i<n; i++) {
+        prefix *= nums[i-1];
+        ans[i] = prefix;
     }
-    return arrayToReturn;
+    int suffix=1;
+    for(int i=n-2; i>=0; i--) {
+        suffix *= nums[i+1];
+        ans[i] *= suffix;
+    }
+
+    return ans;
 }
 
 int main() {
