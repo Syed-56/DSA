@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 vector<int> pairSum(vector<int> nums, int target) {
@@ -7,6 +8,8 @@ vector<int> pairSum(vector<int> nums, int target) {
     int start=0;
     int end=n;
     vector<int> pair;
+
+    sort(nums.begin(), nums.end());
 
     while (start < end) {
         int sum = nums[start] + nums[end];
