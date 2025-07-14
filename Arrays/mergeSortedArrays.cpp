@@ -4,16 +4,22 @@
 using namespace std;
 
 void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
-    int size1 = nums1.size(), size2 = nums2.size();
-    for(int i=m; i<size1; i++) {
-        nums1.pop_back();
+    int idx = m+n-1, i=m-1, j=n-1;
+    while(i>=0 && j>=0) {
+        if(nums1[i] < nums2[j]) {
+            nums1[idx] = nums2[j];
+            idx--;
+            j--;
+        }
+        else {
+            nums1[idx] = nums1[i];
+            idx--;
+            i--;
+        }
     }
-    int index=0;
-    for(int i=m; i<m+n; i++) {
-        nums1.push_back(nums2[index]);
-        index++;
+    while (j >= 0) {
+        nums1[idx--] = nums2[j--];
     }
-    sort(nums1.begin(), nums1.end());
 }
 
 int main() {
