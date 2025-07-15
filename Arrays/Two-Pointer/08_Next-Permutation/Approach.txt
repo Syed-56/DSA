@@ -1,0 +1,21 @@
+array is [1,2,3] then it's permutationsa are:
+[1,3,2] [2,1,3] [2,3,1] [3,1,2] [3,2,1]
+
+first premutation is the smallest and last permutation is the biggest
+so the next permutation will be larger then the current permutation
+
+array [1,2,3,5,4] its next permutation will be a number smaller but it doesn't mean that it will be [1,2,3,4,5] because that was the smallest and now it is [1,2,3,5,4] so next will be [1,2,4,3,5].
+array [1,2,3,6,5,4] its next permutation will be [1,2,4,3,5,6].
+
+Analyzing [1,2,3,6,5,4] :-
+here you can see the logic that traversing from the end of array te elements are in increasing order but then comes an element which is not in that order, it means for next permutation the elements before this element will remain constant. This element is pivot element.
+for other elements after pivot element: A[i] > A[i+1] but not for pivot element so when this condition become true wen traversing backwards we can see that we have our pivot element. in this array [6,5,4] are in backward-increasing order and this order is broken by 3.
+
+now rule is: this pivot element will be replaced with the next bigger element present in the array. in this case, the element bigger then 3 is 4 so [1,2,3] becomes [1,2,4]. now [6,5,4] was in decreasing order now these remaining elements will be in increasing order because previous permutaiton was the last permutation starting with [1,2,3] and this permutaiton starting with [1,2,4] will have its first permutaiton so it will be in increasing order and elements 3,5,6 arranged in increasing order is [3,5,6] so the next permutation we get will be [1,2,4,3,5,6].
+
+Code:
+Iterate backwards until we find pivot element (A[i] < A[i+1]) then store index and break
+Now the next big element after pivot one lies in the half of array after pivotIndex so we iterate from backwards again and the moment we find a bigger one then the pivot we store index and break out of loop
+Swap pivot and next big one
+Since the elements after pivotIndex were in descending order, the next permutaiton will have all of them in ascending order so reverse the array.
+If no pivot element found means we are in last permutation so reverse whole array
