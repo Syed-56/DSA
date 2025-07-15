@@ -1,0 +1,7 @@
+Brute Force:-
+Find all pairs using nested loop and if a pair sums to target, return it. Time = O(n^2)
+
+Better Approach:-
+Sort the array and then use two pointer, if sum if bigger then target then decrement right pointer as it points to a bigger value which is making our sum bigger so we needa smaller value, otherwise increment left pointer because the small value is making our sum small so we need a bigger value. Time = O(nlogn) + O(n) = O(nlogn)
+
+Optimization (Hashing) :-
