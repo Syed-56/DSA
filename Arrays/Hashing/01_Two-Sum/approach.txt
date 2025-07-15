@@ -5,3 +5,7 @@ Better Approach:-
 Sort the array and then use two pointer, if sum if bigger then target then decrement right pointer as it points to a bigger value which is making our sum bigger so we needa smaller value, otherwise increment left pointer because the small value is making our sum small so we need a bigger value. Time = O(nlogn) + O(n) = O(nlogn)
 
 Optimization (Hashing) :-
+
+Here we create an unordered map and store our values as key of map and index of those value as the value at that key. This is because we will be using find function of map which have O(1) time complexity but if we set index as key then we have to search for all values which will make time complexity of this function as O(n).
+When iterating we store the current element as first and the second element as (target-first) and if that second element is found then we return the pair of first and second.
+The find function works same as the first approach of this Q but in O(1)
