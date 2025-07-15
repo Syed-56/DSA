@@ -1,0 +1,4 @@
+The Q says that each row of matrix is sorted and the first element of next row is larger than the last element of previous row.
+So we can iterate over first element of each row and the moment first element become greater then target, we store the index of previous row. This will take single loop
+Now the index of row we got we will search linearly and get the element.
+IF element not found return false else return true.
