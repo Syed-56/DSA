@@ -1,0 +1,7 @@
+1. Brute Force:-
+    Search for all numbers and if target found return true
+
+2. Binary Search:-
+    In our array rows and columns are sorted and you can see that smallest value is at [0,0] amd biggest at [rows-1][cols-1].
+    So our mid can be either [0,rows-1] or [0,cols-1]. We use [0,rows-1] for the sake of simplicity. This position is top right corner.
+    Now if our value is bigger than target then we move down in rows else if its smaller we move back in columns.
