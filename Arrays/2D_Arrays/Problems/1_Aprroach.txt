@@ -5,4 +5,6 @@ Now the index of row we got we will search linearly and get the element if it ex
 IF element not found return false else return true.
 
 Optimzie:-
-Same approach but instea of linear search use binary search
+We do binary search on 2D array, start is 0 and end is (rows*cols)-1 because thats the number of elements (for 3x3 dimension: 3*3-1 = 9-1=8). Now in binary search we do mid=high+low/2 but for 2D array we have to find row anc col index so we use mid to find it.
+Row = mid/cols and col = mid%cols this gives you the "mid" u r looking for in matrix.
+Now if matrix[row][col] > target u do start=mid+1 else end=mid-1 ang again calculate mid row column until mid==target.
