@@ -1,0 +1,8 @@
+This Q asks you to travel in matrix in spiral way and store elements in 1D array.
+
+Brute Force:-
+    first put column traversel = 0 and travel in first row.
+    then pur row traversal = 0 and start at end of first row and travel until the end of last column.
+    now put column traversal = rows-1 and travel backwards till first column in last row.
+    lastly put row traversal = cols-1 and travel upwards to just before where you started.
+    now repeat the process by decreasing finish point by 1 in each iteration.
