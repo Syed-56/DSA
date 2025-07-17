@@ -1,2 +1,8 @@
 Brute Force:
-    
+    first you store grid in 1d array so you can traverse easily then you sort the array so the duplicates will come together and you check by arr[i] == arr[i+1] and store repeating.
+    Now you sum the array except repeating value and sum the values [1,n^2] and the difference between them is repeating value.
+    For No extra space we empty the 1d array we got and then push repeat and missing value.
+    Time Complexity = O(nlogn)  due to sorting
+
+Hashing:
+    Everything else same but instead of sorting you can use set and to s.find() which can check if value is duplicate or not in O(1)
