@@ -1,4 +1,11 @@
 Brute Force:-
     The basic thing to do is just run nested loop and compare each element but that's too basic.
     We will be storing element in unordered set and we will do the usual if (set.find(nums[i]) != set.end()) thing to return duplicate.
+    This give both time and space complexity as O(n)
 
+Slow-Fast Approach:-
+    It require some understanding of a linked-list. In linked list we have nodes. consider array [3,1,3,4,2] as a linked-list here node 0 points to node 3 (index 0 point to element 3) and node 3 point to node 4 (index 3 point to element 4) and node 4 point to node 2 (index 4 point to element 2) and node 2 point to node 3 (index 2 point to element 3) and now you can see that node 3 is pointed by 2 nodes: 0 and 2, so there is occurence of a cycle which we dont want in a linked list. This cycle occurs when a duplicate occurs in a linked list so that's how we can find the duplicate.
+
+    Now for slow fast approach we will initialize both pointers to beginning and then to mimic the approach above, we will set the index to the value at that index which means: slow = nums[slow] and fast = nums[nums[fast]] (this makes pointer move twice). 
+    In the given example: 0 point to 3, 3 point to 4, 4 point to 2, 2 point to 3 and 3 point to 4 which give cycle so we get a linked list like [0->3->4->2->3->4->2] => [0->3->4->2].
+    both pointer are at 0 now when slow at 3 fast is at 4 now when slow at 4 fast is cycle back to 3 due to repitation now slow and fast both reach 2 in next iteration and become equal. When they become equal you break the loop and now you set the slow to beginning of linked list which is node 0 and now move both pointers at same speed so slow move from 0->3 and fast mov efrom 2->3 (cycle) and both pointer are now equal at the node which is the duplicate element.
