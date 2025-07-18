@@ -1,0 +1,4 @@
+Brute Force:-
+    The basic thing to do is just run nested loop and compare each element but that's too basic.
+    We will be storing element in unordered set and we will do the usual if (set.find(nums[i]) != set.end()) thing to return duplicate.
+
