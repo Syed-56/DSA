@@ -1,0 +1,3 @@
+Brute Force:-
+    Do 3 nested loops to find 3 items of pair but we also insert the found pair in set so that if a new pair is found it dont contain any element from previous pairs. Then return the grid of pairs. 
+    Time Complexity = O(n^3 * log(m)) and Space Complexity = O(2n)
