@@ -8,7 +8,7 @@ string removeOccurrences(string s, string part) {
         if(s.substr(open, close-open) == part) {
             s.erase(open, close - open);
             open = 0;
-            close = open+part.length();
+            close = part.length();
         }
         else {
             open++;

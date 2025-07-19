@@ -1,2 +1,4 @@
 The Question gives a part and asks to remove all occurences of it and return the modified string.
-So what we can do is make a window of legnth of the given part string and slide it over string to find occurence and if found then remove it.
+
+Sliding Window:-
+We make a window from start of string to the legnth of part and then slide it and if we find it then we remove it and then set starting of window to 0 and closing to part legnth. this is because of example in "daabcbc" when we find abc and remove it we get "dabc" and if we dont change index the window will start at b and will overflow so we will miss this abc inside dabc so thats why we reset our window.
