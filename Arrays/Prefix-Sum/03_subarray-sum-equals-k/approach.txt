@@ -7,3 +7,5 @@ Optimal (Prefix Sum):-
     Now in next loop we will find a value which is difference of prefix sum at current difference and the target prefix sum and then check if that value exists in our prefix sums map (the map stores prefix sums as key and its frequencies as value), if it exists then in the answer to return we will increase the count of existence by the number of frequencies of that sum in the map, also if the current prefix sum is equal to the target then we will also increase count. 
     Next we will check if the prefix sum at current index has been stored in map, if not then we will store it with frequency 0. After that we will increase the frequency of that prefix sum.
     The reason we do hte subtraction of prefix sum at current index and required is because the target sum is the prefix sum of whole array till the current index minus prefix sum of array before that value which alter it to become the target
+
+    Time Complexity = O(n)
