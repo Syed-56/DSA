@@ -1,0 +1,2 @@
+Same logic as threesum just one extra for loop because one extra number in the pair.
+Time Complexity = O(n^3 + nlogn)
