@@ -2,14 +2,25 @@
 #include <vector>
 using namespace std;
 
-vector<int> subArraySumEqualK(vector<int> nums, int target) {
+int subArraySumEqualK(vector<int> nums, int k) {
+    int result=0;
+    int n = nums.size();
 
+    for(int i=0; i<n; i++) {
+        int sum = 0;
+        for(int j=i; j<n; j++) {
+            sum += nums[j];
+            cout << sum << " ";
+            if(sum==k)  result++;
+        }
+        cout << endl;
+    }
+    return result;
 }
 
 int main() {
     vector<int> nums = {1,2,3};
     int k = 3;
-    vector<int> result = subArraySumEqualK(nums,k);
-    cout << "Subarray = ";
-    for(int val:nums)   cout << val << " ";
+    int result = subArraySumEqualK(nums,k);
+    cout << "Subarray Sum = " << result << endl;
 }
