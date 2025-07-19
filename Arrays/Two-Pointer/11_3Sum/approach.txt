@@ -9,3 +9,4 @@ Better Approach (Hashing):-
 Optimized (Two Pointer)
     We need triplets so what we will do is first we will sort the array now we will iteratoe over array like this:
     our first value will be the i'th value of array and other two will be the extreme ends after the i'th value and now we will do the two pointer thingy. Our sum should be 0, if sum < 0 then increase small value and if sum > 0 decrease large value so the two values are changing and third value i'th value. now if we find a pair we will store it else not, then the i'th value will be increased and we will do the same two pointer thing again. Also in sorted data duplicate values will be together and duplicate values are not needed so we will do the condition of if (nums[i]==nums[i-1]) continue. and inside while loop if nums[j]==nums[j-1] then also continue;
+    Time Complexity = O(nlogn + n^2) and Space Complexity = O(n)
