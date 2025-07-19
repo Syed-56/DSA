@@ -1,3 +1,9 @@
 Brute Force:-
     We use outer loop for reference and then each iteration of inner loop gives new subarray sum and if any sum equals target we increase count and then return count.
     Time Complexity = O(n^2)
+
+Optimal (Prefix Sum):-
+    First we will store all prefix sums of each index in an array, just like a running sum for eg array is [1,2,3,4,5] then we store [1,3,6,10,15] in an array.
+    Now in next loop we will find a value which is difference of prefix sum at current difference and the target prefix sum and then check if that value exists in our prefix sums map (the map stores prefix sums as key and its frequencies as value), if it exists then in the answer to return we will increase the count of existence by the number of frequencies of that sum in the map, also if the current prefix sum is equal to the target then we will also increase count. 
+    Next we will check if the prefix sum at current index has been stored in map, if not then we will store it with frequency 0. After that we will increase the frequency of that prefix sum.
+    The reason we do hte subtraction of prefix sum at current index and required is because the target sum is the prefix sum of whole array till the current index minus prefix sum of array before that value which alter it to become the target
