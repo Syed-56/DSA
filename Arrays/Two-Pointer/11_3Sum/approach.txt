@@ -1,3 +1,6 @@
 Brute Force:-
     Do 3 nested loops to find 3 items of pair but we also insert the found pair in set so that if a new pair is found it dont contain any element from previous pairs. Then return the grid of pairs. 
     Time Complexity = O(n^3 * log(m)) and Space Complexity = O(2n)
+
+Better Approach (Hashing):-
+    In 2 sum problem we had a target and needed to pairs so it was like a+b=target, and in this Q we need to find 3 pairs which sum to 0 which means a+b+c=0 => a+b=-c. So we can say it is like 2 sum problem where target value is -c. So if we set nums[i]=a and in nested loop we can set nums[j]=b and we will set -c=a+b => c=-(a+b) and then when we get value of c we can check if this value exist in the set which contains value from arrays. if yes then we found our pair of triplets, else we didn't. Also we use a set first and then put its values in 2d vector bcz set filters out duplicate values
