@@ -1,0 +1,4 @@
+Two Pointer Approach :-
+    we will compare start and end pointers and do typical algorithm and if comparison return false it means string is not palindrome.
+    we compare them by converting to lowercase because string can be case sensitive as this language is.
+    Also we check if a character is alphanumeric or not because question asks to remove alphanumeric characters.
