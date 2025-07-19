@@ -1,0 +1,2 @@
+The Question gives a part and asks to remove all occurences of it and return the modified string.
+So what we can do is make a window of legnth of the given part string and slide it over string to find occurence and if found then remove it.
