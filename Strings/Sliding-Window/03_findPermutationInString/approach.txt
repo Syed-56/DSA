@@ -1,0 +1,8 @@
+Sliding Window:-
+    1. Storing Frequency of Substring: we store the frequency of each letter by doing freq[s1[i]-'a']. In the frequency array of 26 legnth this trick points to the index of the current letter and increases frequency of it.
+
+    2. Window Iteration: We create a window of size of substring and iterate over it in a loop. Inside the loop we make 2 indexes, one for iterating over window and other for iterating over given string. In each iteration the window index is reset to the beginning of window and the starting of window is increamented by one and the index of given string is also reset to the starting of window. 
+
+    3. Storing Frequency of Window Characters: Inside Window iteration we run a loop which runs when window index is less then window size and string index is less then string size and here store frequency of each window letter just like we did above and increment index of window and string to iterate over whole window. The window index is only used to monitor if we successfully iterated over window.
+
+    4. Frequency Validation: After storing frequencies of window and given string we check frequencies if they are equal means palindrome exist if not then return false. 
