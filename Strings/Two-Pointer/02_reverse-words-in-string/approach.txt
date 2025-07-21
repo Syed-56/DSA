@@ -1,0 +1,4 @@
+First we will reverse the whole string so that atleast the order of position of words is corrected and then we will reverse each individual word.
+The words can be reversed by iterating over string until s[i] != " ", by iterating we store the word and then reverse it and after that we put it in our new answer string with a space. 
+The above mentioned step will be repeated while i<n. The next iteration will be began when s[i] != " ", otherwise we will continue. because we dont want extra white spaces in our string.
+If we somehow get extra spaces in end we run a loop to remove them.
