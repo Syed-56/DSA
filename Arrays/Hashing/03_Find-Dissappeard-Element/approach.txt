@@ -1,0 +1,2 @@
+First we will store all elements in a set so that we can map the elements in O(1). We will do it in reverse order so that we can pop elements from nums after storing elements from it because we will push missing numbers into it.
+Next we will run a loop from [1,n] and check if i'th element exist in set or not. If It dont exist then we push the number inside answer and we do this until loop ends and then return answer.
