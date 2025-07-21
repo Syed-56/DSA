@@ -2,3 +2,4 @@ Brute Force:-
     The outer loop is responsible for checking all substrings, in the inner loop we create a set of seen characters which is updated in each iteration and if a duplicate is found, then we break out of this loop and check the length of substring we got, if it is greater than max, then we store it else we discard it.
 
 Optimization:- (sliding window)
+    We start a window in beginning and in each iteration we increase by adding characters and also add them in a set and in each iteration we check if the element exist in set or not. If it does we decrease the size of window from start and remove the character also from that start index, else we increase window size.
