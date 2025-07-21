@@ -1,0 +1,4 @@
+Brute Force:-
+    The outer loop is responsible for checking all substrings, in the inner loop we create a set of seen characters which is updated in each iteration and if a duplicate is found, then we break out of this loop and check the length of substring we got, if it is greater than max, then we store it else we discard it.
+
+Optimization:- (sliding window)
