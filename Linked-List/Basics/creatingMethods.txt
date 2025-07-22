@@ -2,13 +2,16 @@
     here you create a dynamic node which stores the passed value and points to null bcz of constructor
         head -> [20] -> [30] -> null  |   newNode = [10] -> nullptr
     then you set the pointer of this new node to the head of list, since head is the first value.
-        [10] -> haed -> [20] -> [30] <-> tail -> null
+        [10] -> haed -> [20] -> [30] -> tail <-> null
     then we set the value of head as new node.
-        head <-> [10] -> [20] -> [30] <-> tail -> null
+        head <-> [10] -> [20] -> [30] -> tail <-> null
 
     But what if the list is empty?
     The head by efault points to null so we add the node and then make head = newNode. and also update tail to point to newNode as it is both first and last node. In the case of non-empty linked list, we didn't need to touch tail as element is pushed from behind.
 
         head <-> tail <-> null |  node = [10] -> nullptr
-        [10] -> head <-> tail -> null
-        head <-> [10] <-> tail -> null
+        [10] -> head -> tail <-> null
+        head <-> [10] -> tail <-> null
+
+2) Printing linked list:-
+    You make a temp Node which is initialized by head and then you print it and then make its value equal to the next node it points to and you loop this process until temp Node is not equal to Null

@@ -21,7 +21,7 @@ class List {
         head = tail = NULL;
     }
 
-    void push_back(int value) {
+    void push_front(int value) {
         Node* newNode = new Node(value);
         if(head == NULL) {
             head = tail = newNode;
@@ -31,8 +31,22 @@ class List {
             head = newNode;
         }
     }
+
+    void print() {
+        Node* temp = head;
+        while(temp != NULL) {
+            cout << temp->data << " -> ";
+            temp = temp->next;
+        }
+        cout << "NULL" << endl;
+    }
 };
 
 int main() {
+    List linkedList;
+    linkedList.push_front(10);
+    linkedList.push_front(20);
+    linkedList.push_front(30);
 
+    linkedList.print();
 }
