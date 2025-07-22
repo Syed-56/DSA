@@ -9,15 +9,24 @@ struct ListNode {
 
 // Reverse a singly linked list
 ListNode* middleNode(ListNode* head) {
-    
+    ListNode* temp = head;
+    int size=0;
+    while(temp != NULL) {
+        temp = temp->next;
+        size++;
+    }
+
+    temp = head;
+    int count=0;
+    while(count < (size/2)) {
+        temp = temp->next;
+        count++;
+    }
+    return temp;
 }
 
 void printList(ListNode* head) {
-    while (head) {
-        cout << head->val << " -> ";
-        head = head->next;
-    }
-    cout << "NULL\n";
+    cout << head->val;
 }
 
 int main() {
@@ -26,9 +35,7 @@ int main() {
     head->next = new ListNode(20);
     head->next->next = new ListNode(30);
 
-    printList(head);
-
     head = middleNode(head);
 
     printList(head);
-}
+}  

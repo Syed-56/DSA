@@ -1,0 +1,5 @@
+Brute Force:-
+    Make temp node as head.
+    Traverse the list and calculate size of list by incrementing it in each iteration.
+    Now reset temp node to head after it becomes null and make a count variable.
+    If count variable reaches size/2 means we are in middle so return that node

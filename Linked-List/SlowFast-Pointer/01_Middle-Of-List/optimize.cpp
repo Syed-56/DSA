@@ -13,11 +13,7 @@ ListNode* middleNode(ListNode* head) {
 }
 
 void printList(ListNode* head) {
-    while (head) {
-        cout << head->val << " -> ";
-        head = head->next;
-    }
-    cout << "NULL\n";
+    cout << head->val;
 }
 
 int main() {
