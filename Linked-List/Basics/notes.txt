@@ -1,0 +1,15 @@
+Linked List is a data structure which stores data but instead of storing in contagious memory like arrays, it stores them in nodes which are connected via pointers. Each node points to the next noe in a list.
+
+Node1 -> Node2 -> Node3 -> Null
+
+In a linked list Node, there exist 2 elements: the data stored and the pointer.
+There is a head pointer in linked list which points to the first node and also there is a tail pointer which points to the last element, but it is not useful as of now but it is used in doubly linked list which is a type of linked list.
+
+Types:
+    Single Linked List = Each Node points to next node
+    Doubly Linked List = Each Node points to both next and previous node.
+    Circular Linked List = Last node point backs to preious node, forming a loop.
+
+Operations on linked list:-
+Insertion and Deletion costs O(1) unlike arrays which cost O(n)
+Accessing Elements costs O(n) unlike arrays which cost O(1)
