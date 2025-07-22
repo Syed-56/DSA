@@ -2,3 +2,25 @@ First you will make 3 pointers: previous=NULL, current=head, next=NULL
 now you will iterate until current becomes NULL
 in the loop you will set next to current->next and set current->next to prev, if we set current->next to prev then the linked list is broken and we cant point to other nodes.
 then prev is updated to be current and current is updated to be next, and in next iteration the next node is pointed by current->next again
+
+List = 10->20->30->NULL
+current = 10 and next, prev set to NULL
+inside loop: next = curr->next which is 20
+curr->next = prev means now first node points to NULL
+previous node is incremented from NULL to 10 by prev = curr and current node is incremented to next by curr = next
+
+Now List = NULL<-10->20->30->NULL
+current = 20
+inside loop: next = curr->next which is 30
+curr->next = prev means now 20 points to 10
+the prev node was 10 but now becomes 20 and current node was 20 but now becomes 30
+
+Now List = NULL<-10<-20->30
+current = 30
+inside loop: next = curr->next which is NULL
+curr->next = prev means nows 30 points to 20
+the prev node was 20 but now it becomes 30 and current node becomes next which is NULL
+
+now next==NULL there loop breaks and prev pointer points to new head so we return it
+
+Time Complexity = O(n) and Space Complexity = O(1)
