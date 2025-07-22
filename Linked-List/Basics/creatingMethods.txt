@@ -18,3 +18,13 @@
 
 3) Printing linked list:-
     You make a temp Node which is initialized by head and then you print it and then make its value equal to the next node it points to and you loop this process until temp Node is not equal to Null
+
+4) Pop Front:-
+    First you will create a temperary node and store head node into it and convert head node into it's next node and set temp node's pointer to null so that the node is disconnected and then we can delete it dynamically. If we didn't do this temp Thingy we would've disconnected entire linked list by removing head address.
+
+5) Pop Back:-
+    Here we create a temp node which start at head and then it's pointer is incremented until we reach a node whose next is tail (the node to delete) or whose next to next is null (since tail's next is null).
+    Then we set the next pointer of that node to NULL and delete the data of tail node which is last and set the tail node to be the last temp node
+
+6) Insert:-
+    Here we take the value of node and where we want to insert it and then we run a loop until we reach the position of node where we have to insert it (pos-1) then we create a new dynamic node and set it's address to the position we reached and it's pointer is set to the pointer to next element. If given position < 0 then we dont do anything and if position = 0 we call push front. If the given position is invalid like bigger than linked list, then we are traversing the list and reach null, we break and say invalid

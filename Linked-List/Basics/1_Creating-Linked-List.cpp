@@ -43,10 +43,50 @@ class List {
         }
     }
 
+    void pop_front() {
+        if(head==NULL)  return;
+        Node* temp = head;
+        head = head->next;
+        temp->next = NULL;
+
+        delete temp;
+    }
+
+    void pop_back() {
+        if(head==NULL)  return;
+        Node* temp = head;
+        while(temp->next != tail) {
+            temp = temp->next;
+        }
+        delete tail;
+        tail = temp;
+        tail->next = NULL;
+    }
+
+    void insert(int val, int pos) {
+        if(pos<0)   return;
+        if(pos==0) {
+            push_front(val);
+            return;
+        }
+        
+        Node* temp = head;
+        for(int i=0; i<pos-1; i++) {
+            if(temp == NULL) {
+                cout << "Invalid Position";
+                return;
+            }
+            temp = temp->next;
+        }
+        Node* newNode = new Node(val);
+        newNode->next = temp->next;
+        temp->next = newNode;
+    }
+
     void print() {
         Node* temp = head;
         while(temp != NULL) {
-            cout << temp->data << " -> ";
+            cout << temp->data << "|" << temp->next << " -> ";  //printing address just for understanding
             temp = temp->next;
         }
         cout << "NULL" << endl;
@@ -59,6 +99,15 @@ int main() {
     linkedList.push_front(20);
     linkedList.push_front(30);
     linkedList.push_back(5);
+    linkedList.push_back(0);
 
+    linkedList.print();
+
+    linkedList.pop_front();
+    linkedList.pop_back();
+
+    linkedList.print();
+
+    linkedList.insert(15,1);
     linkedList.print();
 }
