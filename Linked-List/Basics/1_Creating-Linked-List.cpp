@@ -32,6 +32,17 @@ class List {
         }
     }
 
+    void push_back(int value) {
+        Node* newNode = new Node(value);
+        if(head==NULL) {
+            head = tail = newNode;
+        }
+        else {
+            tail->next = newNode;
+            tail = newNode;
+        }
+    }
+
     void print() {
         Node* temp = head;
         while(temp != NULL) {
@@ -47,6 +58,7 @@ int main() {
     linkedList.push_front(10);
     linkedList.push_front(20);
     linkedList.push_front(30);
+    linkedList.push_back(5);
 
     linkedList.print();
 }
