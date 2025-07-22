@@ -1,0 +1,4 @@
+First you will make 3 pointers: previous=NULL, current=head, next=NULL
+now you will iterate until current becomes NULL
+in the loop you will set next to current->next and set current->next to prev, if we set current->next to prev then the linked list is broken and we cant point to other nodes.
+then prev is updated to be current and current is updated to be next, and in next iteration the next node is pointed by current->next again
