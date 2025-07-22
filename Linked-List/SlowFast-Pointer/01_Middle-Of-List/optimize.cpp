@@ -28,6 +28,6 @@ int main() {
     ListNode* head = new ListNode(10);
     head->next = new ListNode(20);
     head->next->next = new ListNode(30);
-
+    head = middleNode(head);
     printList(head);
 }

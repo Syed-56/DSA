@@ -3,7 +3,9 @@ Brute Force:-
     Traverse the list and calculate size of list by incrementing it in each iteration.
     Now reset temp node to head after it becomes null and make a count variable.
     If count variable reaches size/2 means we are in middle so return that node
+    Time Complexity = O(2n) and space Complexity = O(1)
 
 Slow Fast Pointer:-
     We will create 2 pointers set to head and slow pointer will increment by 1 and fast pointer will increment by 2. now when fast pointer reaches end of linked list, the slow pointer will be in the middle so we return that node.
-    But thats for even sized, if linked list size is odd then when slow is at middle fast is at tail so if we increment than fast suprasses null and slow passes +1 from middle so we also check the condition while(fast!=NULL && fast->!=NULL)
+    But thats for even sized, if linked list size is odd then when slow is at middle fast is at tail so if we increment than fast suprasses null and slow passes +1 from middle so we also check the condition while(fast!=NULL && fast->!=NULL).
+    Time Complexity = O(n/2)    even though its same as brute force but we solve in single pass
