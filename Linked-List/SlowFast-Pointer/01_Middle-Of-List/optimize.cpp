@@ -9,7 +9,14 @@ struct ListNode {
 
 // Reverse a singly linked list
 ListNode* middleNode(ListNode* head) {
-    
+    ListNode* slow = head;
+    ListNode* fast = head;
+
+    while(fast != NULL && fast->next != NULL) {
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    return slow;
 }
 
 void printList(ListNode* head) {
@@ -21,10 +28,6 @@ int main() {
     ListNode* head = new ListNode(10);
     head->next = new ListNode(20);
     head->next->next = new ListNode(30);
-
-    printList(head);
-
-    head = middleNode(head);
 
     printList(head);
 }
