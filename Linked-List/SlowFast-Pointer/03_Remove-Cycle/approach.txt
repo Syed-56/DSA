@@ -1,0 +1,2 @@
+Slow Fast Pointer:-
+    In previous Q we detected the cycle, now what we do is after detecting cycle is reinitialize slow pointer to head and now move both slow and fast at a same pace, then they will meet at the starting of loop in linked list. It is a verified method.
