@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Syed Edits/OneDrive/Desktop/Coding-Practice/Data Structures/DSA/Linked-List/SlowFast-Pointer/01_Middle-Of-List",
-      "program": "c:/Users/Syed Edits/OneDrive/Desktop/Coding-Practice/Data Structures/DSA/Linked-List/SlowFast-Pointer/01_Middle-Of-List/build/Debug/outDebug",
+      "cwd": "c:/Users/Syed Edits/OneDrive/Desktop/Coding-Practice/Data Structures/DSA/Linked-List",
+      "program": "c:/Users/Syed Edits/OneDrive/Desktop/Coding-Practice/Data Structures/DSA/Linked-List/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

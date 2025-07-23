@@ -9,24 +9,17 @@ struct ListNode {
 
 // Reverse a singly linked list
 ListNode* mergeTwoLists(ListNode* head1, ListNode* head2) {
-    ListNode head(0); //head of new list
-    ListNode* current = &head;   //current node traverses the both list and creates the merged list
-    while(head1 != NULL && head2 != NULL) {
-        if(head1->val < head2->val) {
-            current->next = head1;
-            head1 = head1->next;
-        }
-        else {
-            current->next = head2;
-            head2 = head2->next;
-        }
-        current = current->next;
+    if(!head1)  return head2;
+    if(!head2)  return head1;
+
+    if(head1->val < head2->val) {
+        head1->next = mergeTwoLists(head1->next, head2);
+        return head1;
     }
-
-    if(head1 != NULL)   current->next = head1;
-    else if(head2 != NULL)  current->next = head2;
-
-    return head.next;   //the head was just a dummy static node, from its next node the list starts
+    else {
+        head2->next = mergeTwoLists(head1, head2->next);
+        return head2;
+    }
 }
 
 void printList(ListNode* head) {

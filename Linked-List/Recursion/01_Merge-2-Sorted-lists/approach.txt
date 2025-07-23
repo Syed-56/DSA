@@ -1,0 +1,7 @@
+Iterative Approach:
+    Compare first node of both lists and the one who is smaller will become the node of new list, now from the list we extracted our node, increment its position and now compare new node of this list and old node of other list and the smaller one will be added to new list and from the list we got the node, increment it's position again, now when any list reaches end, add the remaining nodes of other list.
+
+Recursive Approach:
+    We compare the heads of both nodes and the smaller head is returned Recursively as head in the function, now the smaller head is compared with other head and smaller is Recursively returned again as the current's next, so here list is keep building and the base case is when a list gets empty, we return the current node of other list so it's nexts are also returned.
+
+    mergeTwoLists(*list1, *list2) => if list1 < list2 then the next value of list1 point to the value returned by mergeTwoLists(list1->next, list2) else the next value of list2 point to the value returned by mergeTwoLists(list1, list2->next) this keeps recursing until one list become null and remaining nodes of other list are returned in the last call, and the smaller nodes we got in previous calls, they are also returned to make the linked list and in last the  smaller head from both lists is returned
