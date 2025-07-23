@@ -8,15 +8,8 @@ struct ListNode {
 };
 
 // Reverse a singly linked list
-ListNode* mergeTwoLists(ListNode* head) {
-    ListNode* slow = head;
-    ListNode* fast = head;
-
-    while(fast != NULL && fast->next != NULL) {
-        slow = slow->next;
-        fast = fast->next->next;
-    }
-    return slow;
+ListNode* mergeTwoLists(ListNode* head1, ListNode* head2) {
+    
 }
 
 void printList(ListNode* head) {
@@ -25,9 +18,12 @@ void printList(ListNode* head) {
 
 int main() {
     // Build list: 10 -> 20 -> 30 -> ...
-    ListNode* head = new ListNode(10);
-    head->next = new ListNode(20);
-    head->next->next = new ListNode(30);
-    head = mergeTwoLists(head);
-    printList(head);
+    ListNode* head1 = new ListNode(1);
+    head1->next = new ListNode(2);
+    head1->next->next = new ListNode(3);
+    ListNode* head2 = new ListNode(1);
+    head2->next = new ListNode(3);
+    head2->next->next = new ListNode(5);
+    ListNode* merged = mergeTwoLists(head1, head2);
+    printList(merged);
 }
