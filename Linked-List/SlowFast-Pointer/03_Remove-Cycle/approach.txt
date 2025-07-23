@@ -1,2 +1,3 @@
 Slow Fast Pointer:-
     In previous Q we detected the cycle, now what we do is after detecting cycle is reinitialize slow pointer to head and now move both slow and fast at a same pace, then they will meet at the starting of loop in linked list. It is a verified method.
+    To remove cycle of linked list we also make a prev pointer which points to fast node and is updated in next iteration to fast, so in i'th iteration: fast = fast->next then in (i+1)'th iteration, prev=fast, so when slow==fast we break the loop means the prev pointer is before the fast pointer, which is the last node of list whose next pointer creates cycle so what we do is prev->next = NULL

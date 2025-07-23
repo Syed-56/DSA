@@ -11,6 +11,7 @@ struct ListNode {
 ListNode* removeCycle(ListNode* head) {
     ListNode* slow = head;
     ListNode* fast = head;
+    //ListNode* prev;
     bool cycleFound=false;
     while(fast != NULL && fast->next != NULL) {
         slow = slow->next;
@@ -25,8 +26,10 @@ ListNode* removeCycle(ListNode* head) {
     slow = head;
     while(slow != fast) {
         slow = slow->next;
+        //prev=fast; //when loop ends we reach last node
         fast = fast->next;
     }
+    //prev->next=NULL this removes cycle
     return slow;
 
 }
