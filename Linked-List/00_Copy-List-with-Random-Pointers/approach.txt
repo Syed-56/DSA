@@ -1,0 +1,4 @@
+The question ask you to make a deep copy of given linked list.
+So we will create a dynamic node whose value will be the value of node from other linked list and repeat this process for all nodes.
+Then we will connect all those nodes
+Next we will see that at which values the nodes with current value points "randomly" then we will point to then

@@ -12,9 +12,14 @@ Recursive Approach:
             2->next = mergeTwoLists(3,3):-
                 3->next = mergeTwoLists(NULL,3):-
                     return 3->5 (value of mergeTwoLists(NULL,3))
-                3->next = 3->3->5  (value of mergeTwoLists(3,3))
-            2->next = 2->3->3->5   (value of mergeTwoLists(2,3))
-        1->next = 1->2->3->3->5    (value of mergeTwoLists(2,1))
-    1->next = 1->1->2->3->3->5     (value of mergeTwoLists(1,1))
-    now we go in the call of mergeTwoLists(1,1) we go in next line which is return head1 so node 1 is returned
+                3->next = 3->3->5
+                return 3  (value of mergeTwoLists(3,3))
+            2->next = 2->3->3->5
+                return 2   (value of mergeTwoLists(2,3))
+        1->next = 1->2->3->3->5
+                return 1    (value of mergeTwoLists(2,1))
+    1->next = 1->1->2->3->3->5
+                return 1     (value of mergeTwoLists(1,1))
+    
+    Now see the returned value make list 1->1->2->3->3->5 and 1 is head of list which is returned
             
