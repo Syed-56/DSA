@@ -1,4 +1,9 @@
 The question ask you to make a deep copy of given linked list.
-So we will create a dynamic node whose value will be the value of node from other linked list and repeat this process for all nodes.
-Then we will connect all those nodes
-Next we will see that at which values the nodes with current value points "randomly" then we will point to then
+so what we do is first create a deep copy of head of new list and in its head node you store value of the first node of given list
+then you create a currOriginal node to traverse original list and currCopy extends our new list. How this happens is that currOriginal always point one node ahead of pointer currCopy so currCopy is [1] and currOriginal is [2] so what we do is create a new connection which is a dynamic node which store value from currOriginal node and than set currCopy to point at this new connection so that they are joined, then currOriginal is traversed one node ahead. 
+Now this whole list is created and it's head is stored in memory address of newHead so we can return it and then play with out linked list.
+
+Now after creating of list, well while creating our list we also store our given list nodes as key and new list nodes values, because in next loop we will be traversing in simaltenously in both lists and for a node in old list, we check its random pointer and see the node which random pointer points to, where is this node stored in map so we get the key (since old lists node is stored as key), then the value of this key is same node of new list so now we can point new list random pointer by:-
+randomNode = currOld->random;  currNew->random = map[randomNode]. Since in the loop we start from the 2nd node of old list so store the first node and its random before.
+
+Time Complexity = O(m+n) and Space Complexity = O(n)
