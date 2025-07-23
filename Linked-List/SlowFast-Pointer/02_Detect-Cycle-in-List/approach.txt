@@ -1,0 +1,7 @@
+Slow Fast Pointer:-
+    If there is a cycle in a linked list, then there will be a case when slo pointer and fast pointer become equal
+    So we will run a loop until fast reaches null, if it reaches it means there is no cycle and we return false, but if there is a cycle then we do the if condition to check if slow==fast and return true.
+
+    1->2->3->4   here slow=fast=head then slow=2 & fast=3 then slow=3 & fast=2 then slow=4 and fast=4 slow slow==fast.
+       ^     |
+       |_____|
