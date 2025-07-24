@@ -19,3 +19,8 @@ Doubly Linked List:-
 
            Node1 -> Node2 -> Node3 -> Node4 -> NULL
     NULL <-      <-       <-       <-
+
+Circular Linked List:-
+    In circular linked list, its same as normal but the tail is connected to head.
+   -> Node1 -> Node2 -> Node3 -
+   |__________________________| 

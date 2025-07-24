@@ -1,0 +1,10 @@
+The Question gives a linked list which also contains child linked list like this
+
+1<->2<->3<->4<->5       and you have to flatten it like this
+        |
+        6<->7<->8      1<->2<->3<->6<->7<->9<->10<->8<->4<->5
+            |
+            9<->10  
+
+What you will have do is traverse the list until you find a node whose child != NULL.
+Then you recursively call function with head being that child node and now travel in nested list again until you find node with child != NULL, you insert these nodes next to the parent node and then recurse again abd keep recursing until you reach a tail node of a list, then you go back to the parent list and insert remaining nods of that list to previous parent and now you go up the call stack doing this and at last insert remaining nodes of parent at the end

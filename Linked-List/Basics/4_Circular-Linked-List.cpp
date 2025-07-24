@@ -73,7 +73,7 @@ class List {
         }
         delete tail;
         tail = temp;
-        tail->next = head;;
+        tail->next = head;
     }
 
     void insert(int val, int pos) {
