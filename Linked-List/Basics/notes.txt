@@ -13,3 +13,9 @@ Types:
 Operations on linked list:-
 Insertion and Deletion costs O(1) unlike arrays which cost O(n)
 Accessing Elements costs O(n) unlike arrays which cost O(1)
+
+Doubly Linked List:-
+    In a normal linked list we have a pointer which points to next node but in doubly linked list there is a previous pointer which points to the previous node. In below figure, the -> is next pointer and <- is prev pointer. The next pointer starts from head and prev point starts from tail
+
+           Node1 -> Node2 -> Node3 -> Node4 -> NULL
+    NULL <-      <-       <-       <-
