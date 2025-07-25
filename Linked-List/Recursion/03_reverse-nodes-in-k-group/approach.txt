@@ -1,0 +1,4 @@
+The Q asks to reverse nodes of list in a group of given number k
+if List is 1->2->3->4->5 and k is 2 then list is 2->1->4->3->5.
+if k is 3 then 3->2->1->4->5,    if k is 4 then 4->3->2->1->5.  if k > sizeof(list) then output unchanged
+
