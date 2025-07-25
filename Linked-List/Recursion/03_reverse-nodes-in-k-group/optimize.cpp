@@ -9,7 +9,21 @@ struct ListNode {
 
 // Reverse a singly linked list
 ListNode* reverseList(ListNode* head, int k) {
-    
+    ListNode* curr = head;
+    for(int i=0; i<k; i++) {
+        if(!curr)   return head;    //base case
+        curr = curr->next;
+    }
+
+    ListNode* prevNode = reverseList(curr,k);
+    ListNode* tempHead = head;
+    for(int i=0; i<k; i++) {
+        ListNode* currNext = tempHead->next;
+        tempHead->next = prevNode;
+        prevNode = tempHead;
+        tempHead = currNext;
+    }
+    return prevNode;
 }
 
 void printList(ListNode* head) {
@@ -22,11 +36,11 @@ void printList(ListNode* head) {
 
 int main() {
     // Build list: 10 -> 20 -> 30 -> ...
-    ListNode* head = new ListNode(10);
-    head->next = new ListNode(20);
-    head->next->next = new ListNode(30);
-    head->next->next->next = new ListNode(40);
-    head->next->next->next->next = new ListNode(50);
+    ListNode* head = new ListNode(1);
+    head->next = new ListNode(2);
+    head->next->next = new ListNode(3);
+    head->next->next->next = new ListNode(4);
+    head->next->next->next->next = new ListNode(5);
 
     head = reverseList(head, 2);
 
