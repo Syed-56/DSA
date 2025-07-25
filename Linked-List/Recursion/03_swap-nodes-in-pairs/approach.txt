@@ -1,2 +1,18 @@
 Given list: 1->2->3->4->5
 Output: 2->1->4->3->5
+
+Recursion:-
+Stack Down
+
+1st Call: head is 1, we store next value of head which is 2 by doing headNext = head->next and then call again for pairs after headNext.
+2nd call: head is 3, we store next value of head which is 4 by doing headNext = head->next and then call again for pairs after headNext.
+3rd call: head is 5, base case activated because head->next is NULL so we return node 5.
+
+Stack Up
+
+3rd Call: return 5.
+2nd Call: head->next becomes 5 so we get 3->5 and headNext which was 4, it's next become head (headNext->next = head) so we get 4->3->5
+          now return 4->3->5
+1st Call: head->next becomes 4->3->5 so we get 1->4->3->5 and headNext which was 2, it's next become head (headNext->next = head) so we get 2->1->4->3->5 which is answer.
+
+If node was 1->2->3->4 then in 3rd call base case would still activate because if is (!head || !head->next)
