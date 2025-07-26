@@ -8,4 +8,4 @@ fibo(3) = fibo(2) + fibo(1)              fibo(3) = 1+1 = 2
 fibo(2) = fibo(1) + fibo(0)      =>      fibo(2) = 1+0 = 1
 
 So the 6th fibonacci number is 8
-                            
+you see there are in each call there are (2^call num) calls like in fibo(6) we call fibo(5) and fibo(4) so in call 1 we make 1x2 call. In call 2 we are calling fibo(5) and fibo(4) which call [fibo(4) and fibo(3)] and [fibo(3) and fibo(2)] so in call 2 we make 2x2 so you no in call 3 we will make 4x2=8 calls so you see in each call the call stack is increasing exponentially so Time Complexity = O(2^n)
