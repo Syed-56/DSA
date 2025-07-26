@@ -2,10 +2,9 @@
 using namespace std;
 
 void printTill(int n) {
-    cout << n << " ";
     if(!n)  return;
-    n--;
-    printTill(n);
+    printTill(n-1);
+    cout << n << " ";
 }
 
 int main() {
