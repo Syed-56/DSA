@@ -12,7 +12,8 @@ The process of travelling backwards in call stack until you reach the 1st one is
 Time Complexity = time complexity of each call * total num of calls.
     In factorial Q the time complexity of each call is O(1) and total calls are n so Time Complexity = O(n)
 Space Complexity = space complexity of each call * depth of recursion tree(total calls).
-    In factorial Q the space complexity of each call is O(1) and total calls are n so Space Complexity = O(n);
+    In factorial Q the space complexity of each call is O(1) and total calls are n so Space Complexity = O(n)
+Meanwhile in iterative approach TC = O(n) an SC = O(1)
 
 Recursion Tree: fact(6) => 6*fact(5) => 5*fact(4) => 4*fact(3) => 3*fact(2) => 2*fact(1) => 2*1 ||
                                                                                                 \/
