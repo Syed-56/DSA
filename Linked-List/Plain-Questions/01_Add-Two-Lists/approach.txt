@@ -1,0 +1,14 @@
+We Have Lists [2,4,3] and [5,6,4] and we have to get the sum in reverse so sum is 807 but reverse is 708.
+Traverse the list and store the value of each node in an integer. 
+integer should be initialized with 0 and then we would of integer *= 10 + node->val. 
+In 1st iteration: first number will become 2 and second will become 5. (0*10=0 and 0+2=2, 0*10=0 and 0+5=5)
+In 2nd iteration: first number will become 24 and second will become 6. (2*10=20 and 20+4=24, 5*10=50 and 50+6=56)
+In 3rd iteration: first number will become 243 and second will become 564. (24*10=240 and 240+3=243, 56*1=560 and 560+4 = 564)
+
+Now add them and you get 807.
+Now you create a Node in which you store the answer by doing answer%10 and then divide it.
+In 807:  807%10 = 7 then 807/10 = 80.7 since its an int so we get 80.
+In 80: 80%10 = 0 then 0/10 = 0.
+In 8: 8%10 = 8 and 8/10 = 0.8. since its an int so we get 0. now we stored each digit in the node.
+This is the process of digit extraction but to add them in node.
+First create an empty node and a pointer node, in first iteration we set the first digit value as our node and after that we set the next value of pointer node to the extracted digit and repeat this until sum si 0

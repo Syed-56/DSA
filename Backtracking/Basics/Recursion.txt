@@ -1,0 +1,9 @@
+Recursion Basics:-
+    A function calls itself.
+    For eg you have to print numbers from given numbers to n so in the function you print the given number, decrement the number and call function again, If n was 4, the 4 was printed now n is 3 so 3 is printed, in next call 2 is printed and in next call 1 is printed.
+    Then there is a base case which is the condition to stop recursion, since you wanted to print till 1, you make a base case that if n is 1 then return out of function. But you were n calls deep this process and you just went out of last function call, what about other calls? so what you do write the code for what you wanted to do after, now since you just wanted to print the numbers so you will just return in each call, but this is normal return statement and not base case.
+
+Call Stack:-
+    The function keeps calling itself until it reach a base case and till then, it keeps creating a call stack in the memory. You started at call stack 1 and now you are in deep call stack, now you use base case to return out of this call stack and then, normal function returning happens in previous call stacks.
+    Suppose you wanted to print factorial of a given number so what you do you make a function "int factorial(int n)". Suppose n is 6 so you need to find 6!, but 6! = 6x5! so you call the function again to find 5! and 5!=5x4!, so you keep recursively calling function until you reach either 1 or 0, now we know that 1! or 0! = 1 so we make this base case. Now upon reaching base case we are 6 call stacks deep. The 6th call stack (1!) returns 1, 5th call stack(2x1!) returns 2x1=2, 4th call stack(3x2!) returns 3x2=6, 3rd call stack returns 4x6=24, 2nd call stack returns 5x24=120 and 1st call stack returns 6x120=720 which is 6!.
+    These call stacks are same as iterations in a loop.
