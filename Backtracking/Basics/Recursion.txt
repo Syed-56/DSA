@@ -8,3 +8,12 @@ Call Stack:-
     Suppose you wanted to print factorial of a given number so what you do you make a function "int factorial(int n)". Suppose n is 6 so you need to find 6!, but 6! = 6x5! so you call the function again to find 5! and 5!=5x4!, so you keep recursively calling function until you reach either 1 or 0, now we know that 1! or 0! = 1 so we make this base case. Now upon reaching base case we are 6 call stacks deep. The 6th call stack (1!) returns 1, 5th call stack(2x1!) returns 2x1=2, 4th call stack(3x2!) returns 3x2=6, 3rd call stack returns 4x6=24, 2nd call stack returns 5x24=120 and 1st call stack returns 6x120=720 which is 6!.
     These call stacks are same as iterations in a loop.
 The process of travelling backwards in call stack until you reach the 1st one is called backtracking.
+
+Time Complexity = time complexity of each call * total num of calls.
+    In factorial Q the time complexity of each call is O(1) and total calls are n so Time Complexity = O(n)
+Space Complexity = space complexity of each call * depth of recursion tree(total calls).
+    In factorial Q the space complexity of each call is O(1) and total calls are n so Space Complexity = O(n);
+
+Recursion Tree: fact(6) => 6*fact(5) => 5*fact(4) => 4*fact(3) => 3*fact(2) => 2*fact(1) => 2*1 ||
+                                                                                                \/
+                720     <= 6*120     <= 5*24      <= 4*6       <= 3*2       <= 2*1       <= 1  <=
