@@ -28,3 +28,5 @@ Now what we do is while we "backtrack" since we are updating the given array so 
 
 What happens is we run a loop from the current call stack to the size of array. So when we go back in call stack 1, we run another iteration where call stack is 1 but index become 2 so elements at nums[1] and nums[2] are swapped giving is 132.
 So thats how the recursive tree is formed. Now when we back track to the call where to primary call. Another iteration runs by giving 2 as our first digit and then we make a call again for swapping. This swapping gives 213 and then we backtrack and now replace last 2 which give us 231. Now we backtrack again by reseting array to 123, swap 3 and 1 give 312. Make recursive calls to store it. Backtrack and swap to make 321 and then store it. Now that our index==n and we are in primary call. Our program is finished.
+
+Time Complexity = O(n!*n) and Space Complexity = O(n)
