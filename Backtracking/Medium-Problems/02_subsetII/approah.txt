@@ -1,0 +1,13 @@
+Backtracking:-
+    Same process as previous Q but we see in last branch of include we dont include it because of duplicate value. but to make it work in a code, what we will do is first sort array so that all duplicates are together and then we will make a check before inserting element in subset that if arr[i]==arr[i+1] then skip and increment i. We could've also used hashset to not inclue duplicates but its less efficient
+
+                                                     ---------answer = []----------
+                                                    /                              \
+                                                    1                              []
+                                            /              \                 /             \
+                                           1,2              1               2              []
+                                        /       \       /       \       /       \       /      \  
+                                    1,2,2       1,2    X         1     2,2       2     X        [] 
+
+what we will do is create a index and then compare element on that index and previous index to check comparison and keep incrementing index until we found different elements which are non duplicate, it means we have to include that element.
+TC = O(nlogn + 2^n * n)
