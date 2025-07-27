@@ -9,6 +9,9 @@ void getSubsets(vector<int>& nums, vector<int> subset, vector<vector<int>> &ans,
     }
     subset.push_back(nums[i]);
     getSubsets(nums,subset,ans,i+1);
+    cout << "Current Subset: ";
+    for(int val:subset) cout << val;
+    cout << endl;
     subset.pop_back();
     getSubsets(nums,subset,ans,i+1);
 }
