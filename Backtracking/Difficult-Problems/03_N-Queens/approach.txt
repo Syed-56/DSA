@@ -1,0 +1,9 @@
+The Question asks to place Queens on a chessboard such that they don't attakc each other.
+['.' , '.' , 'Q' , '.']
+['Q' , '.' , '.' , '.']
+['.' , '.' , '.' , 'Q']
+['.' , 'Q' , '.' , '.']
+This chess board is one array of string like this ["..Q.","Q...","...Q",".Q..] and we have to return all possible combinations by storing then in a 2D array.
+What we will do is first start at (0,0) and run a loop to check all columns.
+In first row, Queen can be placed anywhere so we place it in first box, then we recursively call the function again to place Queen in 2nd row (each call stack represent current row). Here we see that we cant place it in (1,0) so we check next step we also cant place in (1,1) then next and now we can place in (1,2). This traversing is done by loop. Now we have placed it. Now when we reach 3rd row. We see we can't place our queen anywhere. So we backtrack and reset Queen position by writing '.' and now we are in previous call stack we check remaining iterations to see we can place it anywhere or not? then with this backtracking we can find correct position for all queens. Now when all rows are fulfilled and we hit base case to return, we backtrack now too so also in this backtracking we also reset all queen positions and run remaining iterations to check if there are other valid position for queens too or not?
+Time Complexity = O(n)
