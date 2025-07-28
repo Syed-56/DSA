@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-bool isSafe(vector<string> board, int row, int col, int n) {
+bool isSafe(vector<string>& board, int row, int col, int n) {
     //horizontal check
     for(int i=0; i<row; i++) {
         if(board[i][col]=='Q')  return false;
