@@ -1,0 +1,3 @@
+Question asks to find palindromic substrings
+Given String  = "aabc"
+Output = ["aa","a","b","c"]
