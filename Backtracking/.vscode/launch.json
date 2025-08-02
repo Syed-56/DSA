@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": ".",
-      "program": "build/Debug/outDebug",
+      "cwd": "c:/Users/Syed Edits/OneDrive/Desktop/Coding-Practice/Data Structures/DSA/Backtracking/Medium-Problems/02_Combination-Sum-II",
+      "program": "c:/Users/Syed Edits/OneDrive/Desktop/Coding-Practice/Data Structures/DSA/Backtracking/Medium-Problems/02_Combination-Sum-II/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

@@ -1,0 +1,16 @@
+The code gives an array of positive numbers and asks to return all possible combinations which sums up to target. combinations can also include one element multiple times.
+arr = [2,3,5] and target = 8.
+sums = [[3,5],[2,3,3],[2,2,2,2]]
+
+Our recursion tree will include 3 branches. In one branch we will include elements and in other branch we will exclude elements but there will be another branch in which we will include repeating elements.
+
+                                                     ans
+                                                /          |          \
+                                               2           2           []
+                                            /  |  \       /  |  \     / | \   
+                                          2,3 2,3 2     2,2 2,2 2    3   3   []
+                                                                       / | \
+                                                                    3,5 3,3 []  
+
+first the tree starts empty than in 1st branch we include first element and since we include it only one we increment the call by 1 then in 2nd branch we include 1st element but we can inclue duplicate so we ont increment the call. Then for 3rd branch we exclude the element by backtracking. Also in each call we decrease the target by the number which is added in our combination so that we can stop recursion when target becomes 0 (means all elements are in array which sums to target) and include the combination into answer. Also if we include elements which sums to more than target then our target becomes negative so we will include another condition if target becomes negative then stop recursion and we dont include that combination in our answer. And also we stop recursion when call stack reaches size of array
+For base case we have 3 conditions: when our call stack reaches size of array (i==n), when the target reaches 0 and when target becomes negative

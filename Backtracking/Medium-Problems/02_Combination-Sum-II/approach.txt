@@ -1,0 +1,17 @@
+The code gives an array of positive numbers and asks to return all possible combinations which sums up to target. combinations cant include one element multiple times.
+arr = [2,3,5] and target = 8.
+sums = [[3,5]]
+
+Our recursion tree will include 3 branches. In one branch we will include elements and in other branch we will exclude elements but there will be another branch in which we will include repeating elements.
+
+                                                        ans
+                                                   /          \
+                                                  2           []
+                                                 / \        /    \
+                                             2,3     2     3      [] 
+                                             /\      /\    /\     /\
+                                       2,3,5  2,3  2,5 2  3,5 3  5 [] 
+
+same as previous question just dont include the branch in which we include same element. Here we also subtract current element from target in each call and see when last call, in the combination of [3,5] the target will be 0, else its not.
+So base cases are: target==0 (here we pushback answer), target < 0  and calls==n (here we dont pushback ans)
+We also sort each combination so that duplicates like [3,5] and [5,3] are not included
