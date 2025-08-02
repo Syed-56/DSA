@@ -1,14 +1,17 @@
 #include <iostream>
 #include <vector>
+#include <string>
 using namespace std;
 
-void backTrack(string s, vector<vector<string>>& ans, int i) {
-
+void backTrack(string s, vector<vector<string>>& ans, vector<string>& combination, int i) {
+    if(i==s.size())     return;
+    
 }
 
 vector<vector<string>> partition(string s) {
     vector<vector<string>> ans;
-    backTrack(s,ans,0);
+    vector<string> combination;
+    backTrack(s,ans,combination,0);
     return ans;
 }
 
