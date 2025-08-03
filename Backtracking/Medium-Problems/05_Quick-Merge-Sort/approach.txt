@@ -1,0 +1,14 @@
+Here we divide the array by half just like binary searching:
+                                        4,3,5,1,6,2
+                                       /           \
+                                    1,2,3         4,5,6
+                                    /   \         /    \
+                                  1,2   3       4,5     6
+                                  /\    |       /\      |
+                                 1 2    3       4 5     6
+
+Now when we backtrack, we call a merge function which compares the elements and pass them in a new array.
+Here we have n calls(6), when backtracking from 1, our array has 1 and when backtracking from 2, array contain 2. Now compare 1 and 2 and push them in new array we get 1,2. Now backtrack from 3 and compare and merge 1,2 and 3 we get 1,2,3. Similarly in other half we get 4,5,6. We merge these 2 arrays and we get 1,2,3,4,5,6.
+Actually its not 2 arrays, we have the array from the Question but it means how we traverse and monitor them. Like when backtarcking and we are in 2nd last call stack we pass array  [4,3,5,1,6,2], but when backtracking we had pointers from 2 sorted arrays [1,2,3] and [4,5,6] so in the backtrack call of 1,2,3: start=1, mid=2, end=3 and in backtrack call of 4,5,6: start=4, mid=5, end=6. we compare both starts and the element inserted, the start of that array is incremented so that's how we get sorted array. When either of array is completely filled into the sorted, remaining elements of other array is putted directly.
+
+Since the first step of dividing is like binary search so its O(logn) and second step of merging is just traversing array and adding so its O(n). So thats why merge sort algorithm is O(nlogn)
