@@ -1,3 +1,16 @@
 Question asks to find all combinations which includes palindromic substrings from given string
-Given String  = "aabc"
-Output = [["aa","a","b","c"],["a","a","b","c"]]
+Given String  = "aab"
+all substring = a,a,b,aa,ab,aa,ab,aab
+palindromic substrings = [["aa","a","b","c"],["a","a","b","c"]]
+
+We do it by putting cuts at different indexes and then further cutting.
+
+                                                 aab
+                                             /        \
+                                           a|ab      aa|b
+                                           /  \      /  \ 
+                                          a  ab     aa   b   
+                                         |   /\     /\   |
+                                         a  a  b   a  a  b
+In the last call we get all the subsets wwhich are palindromic but strings before them are also checked and included if palindrome
+What we do is iterate over whole string and check if string is palindrome than we store it and what we do pass string after it to check if it is palindrome and keep dividing it. Then when we back track we check for the i+1 position
