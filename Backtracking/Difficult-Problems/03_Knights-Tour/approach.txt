@@ -1,0 +1,8 @@
+In the Questions we are given a grid which gives order of knight moves and we have to check if its valid or not
+[0 3 6]     here we see knight starts at 0 now it has to reach 1. Since it moves in L shape so we can either reach 7 or 1 so we check both
+[5 8 1]     combinations and see valid is 1 so we go there and again call function now we can move at 0 and 2 but 2 is valid so we go 
+[2 7 4]     there and we recurse this but when we are at 7 we can reach either 0 or 6 but we have to reach 8 so now we return false.
+            therefore the given grid is invalid.
+
+What we do is we start at row=0,col=0 and moveNum=0 now a knight has valid 8 moves like (2,1)(2,-1)(-2,1)(-2,-1)(1,2)(1,-2)(-1,2)(-1,-2)
+we check for all paths and travel where possible for eg in 1st move we can only travel at (2,-1) and (1,-2). So we check a condition for that if our current path is at a position forbidden then we return false and backtrack. Also in first move we can travel to 7 but we have to travel acc to given grid so at the move (1,-2) where we can travel to 7, we also return false there and backtrack which leaves us to the only valid move grod[2][-1]. We stored all these moves in a variable and we return true if anyone of those moves were valid. If a move is valid, we recurse and then again and again if we dont find any illegal move then we hit basecase where we are at last box which is (gridSize*gridSize)-1.
