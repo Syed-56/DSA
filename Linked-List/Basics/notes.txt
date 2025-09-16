@@ -1,4 +1,4 @@
-Linked List is a data structure which stores data but instead of storing in contagious memory like arrays, it stores them in nodes which are connected via pointers. Each node points to the next noe in a list.
+Linked List is a data structure which stores data but instead of storing in contagious memory like arrays, it stores them in nodes which are connected via pointers. Each node points to the next node in a list.
 
 Node1 -> Node2 -> Node3 -> Null
 

@@ -3,7 +3,7 @@ using namespace std;
 
 struct ListNode {
     int val;
-    Node* next;
+    ListNode* next;
     ListNode(int x) : val(x), next(nullptr) {}
 };
 
@@ -62,13 +62,13 @@ void printList(ListNode* head) {
 
 int main() {
     // Create original list: 1 -> 2 -> 3
-    ListNode* head = new Node(2);
-    head->next = new Node(4);
-    head->next->next = new Node(3);
+    ListNode* head = new ListNode(2);
+    head->next = new ListNode(4);
+    head->next->next = new ListNode(3);
 
-    ListNode* head2 = new Node(5);
-    head2->next = new Node(6);
-    head2->next->next = new Node(4);
+    ListNode* head2 = new ListNode(5);
+    head2->next = new ListNode(6);
+    head2->next->next = new ListNode(4);
 
     ListNode* sum = addTwoNums(head, head2);
 
