@@ -1,0 +1,9 @@
+Stack: A LIFO Data structure, element added in last is removed first and element added first is removed last.         top-> |---------|
+    Removing Element from top is called pop and inserting element at top is called push. Last element added is called pop   |---------|
+    Since we implement the stack using vector internally, the top is last element of vector i.e v.size()-1                  |---------|
+    Pop is v.popback() and Push is v.pushback. all three functionalitirs are O(1).
+    We also implement a function which tells if stack is empty or not.
+    To print a stack, run loop while stack is not empty and print top and pop it
+
+Stack with Linked List:
+    Like in linked list our main thing is head so here the top is head and the push function is pushfront and pop is popfront. Head always points to the top

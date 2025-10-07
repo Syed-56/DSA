@@ -1,0 +1,7 @@
+Queue: Works on FIFO Principle (Element added first is removed first), like in an assembly line. []-[]-[]
+    Element added first is called front and element added last is called rear. Push() removes front and Pop() removes rear.
+    Push is here called enqueue() and pop is called dequeue(), All functionalities are O(1)
+    This is a basic queue which is called linear queue as elements are linear
+
+    In dequeue: first element is reduced and since first is pointed by front so now we have to point it at next element so we do front++
+    In enqueue: last element is added and since it is pointed by rear so we increment rear++
