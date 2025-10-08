@@ -5,3 +5,9 @@ Queue: Works on FIFO Principle (Element added first is removed first), like in a
 
     In dequeue: first element is reduced and since first is pointed by front so now we have to point it at next element so we do front++
     In enqueue: last element is added and since it is pointed by rear so we increment rear++
+
+Queue with linked list: It is very easy to apply is enqueue means new element is head and dequeue means head = head->next
+A type of Queue is Dequeue where you can also access queue at back so you can implement pushFron pushBack popFront popBack all like linkedlist and you can also return rear
+
+Circular Queue: A queue in which rear is connected with front (rear->next = front) and in array implementation its rear = (rear + 1) % MAX; front = (front + 1) % MAX;
+    It has a limited size and fixed due to Circular structure
