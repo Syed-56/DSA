@@ -1,0 +1,33 @@
+Infix: (A+B)*C
+Postfix: A B + C *  (reverse polish notation)
+Prefix: * + A B C (polish notation)
+
+Precedence of Operators: ^ >> *,/ >> +,-
+
+Equation:x-y/z-k*d
+scan 'x' => Postfix Expression = x and Stack = empty
+scan '-' => Postfix Expression = x and Stack = -
+scan 'y' => Postfix Expression = x y and Stack = -
+scan '/' => Postfix Expression = x y and Stack = - /  (since Precedence of / > Precedence of -)
+scan 'z' => Postfix Expression = x y z and Stack = - / 
+scan '-' => Postfix Expression = x y z - / and Stack = - (Precedence of - > Precedence of / so rule says that pop whole stack and         store into Expression and then add the scanned Operator).
+    Reason is - cant stay above / so we pop it and it also cant stay above - due to Precedence so thats why they are popped out
+scan 'k' => Postfix Expression = x y z - / k and Stack = -
+scan '*' => Postfix Expression = x y z - / k and Stack = - *
+scan 'd' => Postfix Expression = x y z - / k d and Stack = - *
+Now to finish the Postfix Expression we pop the operators in stack into Expression
+Postfix Expression = x y z - / k d - *
+
+Equation: A + (B*C - D) / E
+scan 'A' => Postfix Expression = A and Stack = empty
+scan '+' => Postfix Expression = A and Stack = +
+scan '(' => Postfix Expression = A and Stack = ( + ['(' is always pushed in stack]
+scan 'B' => Postfix Expression = A B and Stack = ( +
+scan '*' => Postfix Expression = A B and Stack = * ( +
+scan 'C' => Postfix Expression = A B C and Stack = * ( +
+scan '-' => Postfix Expression = A B C * and Stack = - ( +  [Precedence rule and remember: never pop '(']
+scan 'D' => Postfix Expression = A B C * D and Stack = - ( +
+scan ')' => Postfix Expression = A B C * D - and Stack = + [for ')' we find matching '(' in stack and discard it]
+scan '/' => Postfix Expression = A B C * D - and Stack = / +
+scan 'E' => Postfix Expression = A B C * D - E and Stack = / +
+Final Ans: A B C * D - E / +
