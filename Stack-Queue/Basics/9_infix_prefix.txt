@@ -1,0 +1,15 @@
+Infix: (A+B)*C
+Postfix: A B + C *  (reverse polish notation)
+Prefix: * + A B C (polish notation)
+
+Precedence of Operators: ^ >> *,/ >> +,-
+
+Equation: (A+B)-(C-D)
+Reverse Infix = )D - C( * )B + A(
+Swap Paranthesis = (D - C) * (B + A)
+Convert reversed infix with swapped Paranthesis into postfix: D C - B A + *
+Reverse this Postfix: * + A B - C D (final answer)
+
+Prefix to Infix: Same idea as Postfix to Infix but iterate in reversed manner (from right to left). Therefore operand 2 of Postfix to Infix is operand 1 and operand 1 of Postfix to Infix is operand 2
+
+Evaluation of Prefix: travel right to left if a digit encountered push it in stack if a operand encountered, evaluate it with 2 operands and push the result in stack and return result

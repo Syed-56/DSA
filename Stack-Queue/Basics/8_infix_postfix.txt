@@ -31,3 +31,17 @@ scan ')' => Postfix Expression = A B C * D - and Stack = + [for ')' we find matc
 scan '/' => Postfix Expression = A B C * D - and Stack = / +
 scan 'E' => Postfix Expression = A B C * D - E and Stack = / +
 Final Ans: A B C * D - E / +
+
+Convert Postfix to infix:
+A B C * D - E / +
+scan 'A' => Stack = A
+scan 'B' => Stack = B A
+scan 'C' => Stack = C B A
+scan '*' => pop 2 operands and place operator in between and store into stack by closing bracket: Stack = (B*C) A
+scan 'D' => Stack = D (B*C) A
+scan '-' => pop 'D' and '(B*C)' and place - in between: Stack = (B*C)-D A
+scan 'E' => Stack = E (B*C)-D A
+scan '/' => pop E and '(B*C)-D' and place '/' in between: Stack = ((B*C)-D)/E A
+scan '+' => Stack:  (A+(((B*C)-D)/E)) is the final infix expression
+
+Evaluation of Postfix: travel left to right if a digit encountered push it in stack if a operand encountered, evaluate it with 2 operands and push the result in stack and return result
